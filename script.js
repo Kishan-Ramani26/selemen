@@ -171,31 +171,110 @@ function scorllAnnmation() {
       start: `top 0%`,
       end: `top -5%`,
       scrub: 3,
-      
+
     }
   })
 }
 scorllAnnmation();
 
+function page2lines() {
+  gsap.to(".page2 .secondline", {
+    scale: 1,
+    scrollTrigger: {
+      trigger: `.page2 .secondline`,
+      start: `top 100%`,
+      scroller: `.main`,
+      scrub: 2,
+    }
+  })
 
-gsap.to(".page2 .secondline",{
-  scale:1,
-  scrollTrigger:{
-    trigger:`.page2 .secondline`,
-    start:`top 100%`,
-    scroller:`.main`,
-    scrub:2,
-  }
+  gsap.to(".page2 .page2center .title2 h1", {
+    scale: 1,
+    duration: 0.5,
+    scrollTrigger: {
+      start: `top 95%`,
+      trigger: `.page2 .page2center .title2 h1`,
+      scroller: `.main`,
+    }
+  })
+
+} page2lines();
+
+
+
+function page3lines() {
+
+  gsap.to("page3",{
+    BorderBottom: `1px solid #A9ABB5`,
+    scrollTrigger:{
+      trigger:`.page3`,
+      scroller:`.main`,
+      start:`top 50%`,
+    }
+  })
+
+  gsap.to(".page3 .page3line2", {
+    scale: 1,
+    duration: 2,
+    scrollTrigger: {
+      trigger: `.page3 .page3line2`,
+      scroller: `.main`,
+      start: `top 67%`,
+    }
+  })
+
+
+  gsap.to(".page3 .page3line1", {
+    height: `150vh`,
+    duration: 2,
+    scrollTrigger: {
+      trigger: `.page2`,
+      scroller: `.main`,
+      start: `top -10%`,
+    }
+  })
+} page3lines();
+
+function page3imgAnnmation(){
+  
+document.querySelector(".left img , .text").addEventListener("mouseenter",() => {
+  gsap.to(".container .left img",{
+    height:`80%`,
+    width:`80%`,
+  })
 })
 
-gsap.to(".page2 .page2center .title2 h1",{
-  scale:1,
-  duration:0.5,
-  scrollTrigger:{
-    start:`top 95%`,
-    // end:`bottom top`,
-    trigger:`.page2 .page2center .title2 h1`,
-    scroller:`.main`,
-    markers:true
+document.querySelector(".left img , .text").addEventListener("mouseleave",() => {
+  gsap.to(".container .left img",{
+    height:`60%`,
+    width:`75%`,
+  })
+})
+
+document.querySelector(".right ").addEventListener("mouseenter",(e) => {
+  gsap.to(".container .right img",{
+    height:`80%`,
+    width:`80%`
+  })
+})
+
+document.querySelector(".right").addEventListener("mouseleave",() =>{
+  gsap.to(".container .right img",{
+    height:`60%`,
+    width:`75%`,
+  })
+})
+}page3imgAnnmation();
+
+gsap.to(".page4 .hero h1", {
+  transform: `rotate(-90deg)`,
+  scale: 5,
+  letterSpacing:`5vw`,
+  scrollTrigger: {
+    trigger: `.page4`,
+    scroller: `.main`,
+    start: `top top`,
+    scrub: 2,
+    pin: true
   }
 })

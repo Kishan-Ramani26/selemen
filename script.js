@@ -1,3 +1,8 @@
+// function FeatherScroll(){
+//   const scroll = new FeatherScroll();
+// } FeatherScroll();
+
+
 function locomotive() {
   gsap.registerPlugin(ScrollTrigger);
 
@@ -199,8 +204,6 @@ function page2lines() {
   })
 
 } page2lines();
-
-
 
 function page3lines() {
 
